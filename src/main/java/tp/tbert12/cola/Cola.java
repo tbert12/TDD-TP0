@@ -1,11 +1,11 @@
-package tp0.tbert12.cola;
+package tp.tbert12.cola;
 
-public class Cola<T> implements Queue {
+class Cola implements Queue {
     private InterfaceNode first = new NullNode();
 
     @Override
     public boolean isEmpty() {
-        return (size() == 0);
+        return ( size() == 0 );
     }
 
     @Override
@@ -15,7 +15,7 @@ public class Cola<T> implements Queue {
 
     @Override
     public void add(Object item) {
-        first = first.appendNext(new Node(item));
+        first = first.appendNext(new Node<>(item));
     }
 
     @Override

@@ -1,12 +1,12 @@
-package tp0.tbert12.cola;
+package tp.tbert12.cola;
 
-public class NullNode implements InterfaceNode {
+class NullNode implements InterfaceNode {
 
     public int countNexts() {
         return 0;
     }
 
-    public Object getContent(){
+    public Object getContent() {
         throw new AssertionError();
     }
 
@@ -16,7 +16,7 @@ public class NullNode implements InterfaceNode {
     }
 
 
-    public Node getNextNode(){
+    public Node getNextNode() {
         throw new AssertionError();
     }
 }

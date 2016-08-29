@@ -1,4 +1,4 @@
-package tp0.tbert12.cola;
+package tp.tbert12.cola;
 
 interface Queue<T> {
     boolean isEmpty();
