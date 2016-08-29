@@ -1,11 +1,7 @@
 package tp0.tbert12.cola;
 
-public class Cola implements Queue {
-    private Node first;
-
-    public Cola(){
-        first = null;
-    }
+public class Cola<T> implements Queue {
+    private InterfaceNode first = new NullNode();
 
     @Override
     public boolean isEmpty() {
@@ -14,28 +10,21 @@ public class Cola implements Queue {
 
     @Override
     public int size() {
-        return (first != null) ? first.countNexts() : 0;
+        return first.countNexts();
     }
 
     @Override
     public void add(Object item) {
-        if (isEmpty()) {
-            first = new Node(item);
-        } else {
-            first.appendNext(new Node(item));
-        }
+        first = first.appendNext(new Node(item));
     }
 
     @Override
     public Object top() {
-        return first.content;
+        return first.getContent();
     }
 
     @Override
     public void remove() {
-        if (isEmpty()){
-            throw new AssertionError();
-        }
-        first = first.nextNode;
+        first = first.getNextNode();
     }
 }

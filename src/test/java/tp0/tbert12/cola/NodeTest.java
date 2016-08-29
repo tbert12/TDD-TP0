@@ -1,20 +1,15 @@
 package tp0.tbert12.cola;
 
 import org.junit.Test;
-import tp0.tbert12.cola.Node;
-
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Tomi on 26/08/2016.
- */
 public class NodeTest {
 
-    @Test
+    @Test(expected = AssertionError.class)
     public void crearNodoVacio(){
         Node elNodo = new Node(null);
-        assertEquals(elNodo.content, null);
-        assertEquals(elNodo.nextNode, null);
+        elNodo.getContent();
+        elNodo.getNextNode().getContent();
     }
 
     @Test
@@ -22,8 +17,8 @@ public class NodeTest {
         Node elNodo = new Node(3);
         elNodo.appendNext(new Node(4));
 
-        Node siguienteNodo = elNodo.nextNode;
-        assertEquals((int)siguienteNodo.content,4);
+        Node siguienteNodo = (Node)elNodo.getNextNode();
+        assertEquals((int)siguienteNodo.getContent(),4);
     }
 
     @Test
@@ -32,11 +27,11 @@ public class NodeTest {
         elNodo.appendNext(new Node(4));
         elNodo.appendNext(new Node(5));
 
-        Node siguiente = elNodo.nextNode;
-        assertEquals((int)siguiente.content,4);
+        Node siguiente = (Node)elNodo.getNextNode();
+        assertEquals((int)siguiente.getContent(),4);
 
-        Node siguienteDelSiguiente = siguiente.nextNode;
-        assertEquals((int)siguienteDelSiguiente.content,5);
+        Node siguienteDelSiguiente = (Node)siguiente.getNextNode();
+        assertEquals((int)siguienteDelSiguiente.getContent(),5);
     }
 
     @Test
@@ -46,11 +41,11 @@ public class NodeTest {
             elNodo.appendNext(new Node(i));
         }
 
-        assertEquals((int)elNodo.content,0);
-        Node nodoSiguiente = elNodo.nextNode;
+        assertEquals((int)elNodo.getContent(),0);
+        InterfaceNode nodoSiguiente = elNodo.getNextNode();
         for (int i = 1; i < 40; i++){
-            assertEquals((int)nodoSiguiente.content,i);
-            nodoSiguiente = nodoSiguiente.nextNode;
+            assertEquals((int)nodoSiguiente.getContent(),i);
+            nodoSiguiente = nodoSiguiente.getNextNode();
         }
 
     }

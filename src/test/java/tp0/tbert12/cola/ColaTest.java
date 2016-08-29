@@ -1,13 +1,9 @@
 package tp0.tbert12.cola;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Tomi on 26/08/2016.
- */
+import static org.junit.Assert.*;
+
 public class ColaTest {
 
     @Test

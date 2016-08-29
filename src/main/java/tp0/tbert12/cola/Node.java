@@ -1,24 +1,28 @@
 package tp0.tbert12.cola;
 
 
-public class Node {
-    public Object content;
-    public Node nextNode;
+public class Node<E> implements InterfaceNode {
+    private final Object content;
+    private InterfaceNode nextNode = new NullNode();
 
     public Node(Object theContent) {
-        nextNode = null;
         content = theContent;
     }
 
     public int countNexts() {
-        return (nextNode != null) ? 1 + nextNode.countNexts() : 1;
+        return 1 + nextNode.countNexts();
     }
 
-    public void appendNext(Node node){
-        if (nextNode == null) {
-            nextNode = node;
-        } else {
-            nextNode.appendNext(node);
-        }
+    public Object getContent(){
+        return content;
+    }
+
+    public InterfaceNode appendNext(Node node){
+        nextNode = nextNode.appendNext(node);
+        return this;
+    }
+
+    public InterfaceNode getNextNode(){
+        return nextNode;
     }
 }

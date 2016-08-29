@@ -1,6 +1,6 @@
 package tp0.tbert12.cola;
 
-public interface Queue<T> {
+interface Queue<T> {
     boolean isEmpty();
 
     int size();
