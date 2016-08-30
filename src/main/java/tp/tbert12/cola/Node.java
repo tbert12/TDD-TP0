@@ -9,14 +9,22 @@ class Node<T> implements InterfaceNode {
         content = theContent;
     }
 
+    @Override
+    public boolean isNull() {
+        return false;
+    }
+
+    @Override
     public int countNexts() {
         return 1 + nextNode.countNexts();
     }
 
+    @Override
     public T getContent() {
         return content;
     }
 
+    @Override
     public InterfaceNode appendNext(Node node) {
         nextNode = nextNode.appendNext(node);
         return this;

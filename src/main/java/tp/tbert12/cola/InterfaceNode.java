@@ -5,6 +5,8 @@ interface InterfaceNode {
 
     int countNexts();
 
+    boolean isNull();
+
     Object getContent();
 
     InterfaceNode appendNext(Node node);

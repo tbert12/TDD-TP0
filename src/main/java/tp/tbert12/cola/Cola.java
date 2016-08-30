@@ -5,7 +5,7 @@ class Cola implements Queue {
 
     @Override
     public boolean isEmpty() {
-        return ( size() == 0 );
+        return first.isNull();
     }
 
     @Override
