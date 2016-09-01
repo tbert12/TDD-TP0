@@ -1,6 +1,6 @@
 package tp.tbert12.cola;
 
-class NullNode<T> implements InterfaceNode {
+class NullNode<T> implements InterfaceNode<T> {
 
     @Override
     public int countNexts() {
@@ -18,12 +18,12 @@ class NullNode<T> implements InterfaceNode {
     }
 
     @Override
-    public InterfaceNode appendNext(Node node) {
+    public InterfaceNode<T> appendNext(InterfaceNode<T> node) {
         return node;
     }
 
     @Override
-    public InterfaceNode getNextNode() {
+    public InterfaceNode<T> getNextNode() {
         throw new AssertionError();
     }
 }

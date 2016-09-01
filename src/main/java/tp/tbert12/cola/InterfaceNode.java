@@ -1,15 +1,15 @@
 package tp.tbert12.cola;
 
 
-interface InterfaceNode {
+interface InterfaceNode<T> {
 
     int countNexts();
 
     boolean isNull();
 
-    Object getContent();
+    T getContent();
 
-    InterfaceNode appendNext(Node node);
+    InterfaceNode<T> appendNext(InterfaceNode<T> node);
 
-    InterfaceNode getNextNode();
+    InterfaceNode<T> getNextNode();
 }

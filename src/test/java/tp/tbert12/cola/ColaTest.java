@@ -15,16 +15,16 @@ public class ColaTest {
 
     @Test
     public void colaConUnElemento() {
-        Cola laCola = new Cola();
+        Cola<Integer> laCola = new Cola<>();
         laCola.add(1994);
         assertEquals(laCola.size(),1);
-        assertEquals(laCola.top(),1994);
+        assertEquals(laCola.top(),(Integer) 1994);
         assertFalse(laCola.isEmpty());
     }
 
     @Test
     public void colaAgregoYEliminoUnElemento() {
-        Cola laCola = new Cola();
+        Cola<String> laCola = new Cola<>();
         laCola.add("Tomas");
         assertEquals("Tomas",laCola.top());
 
@@ -35,7 +35,7 @@ public class ColaTest {
 
     @Test
     public void pruebaDeVolumen() {
-        Cola laCola = new Cola();
+        Cola<Integer> laCola = new Cola<>();
 
         for (Integer i = 0; i <= 167; i++) {
             laCola.add(i);

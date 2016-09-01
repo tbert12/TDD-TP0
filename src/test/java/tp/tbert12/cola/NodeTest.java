@@ -24,7 +24,7 @@ public class NodeTest {
 
     @Test
     public void pruebaAppendearProfundamenteHastaElUltimo() {
-        Node elNodo = new Node<>(3);
+        Node<Integer> elNodo = new Node<>(3);
         elNodo.appendNext(new Node<>(4));
         elNodo.appendNext(new Node<>(5));
 
@@ -37,7 +37,7 @@ public class NodeTest {
 
     @Test
     public void pruebaDeTamanoAppendearProfundamenteHastaElUltimo() {
-        Node elNodo = new Node<>(0);
+        Node<Integer> elNodo = new Node<>(0);
         for (int i = 1; i < 40; i++) {
             elNodo.appendNext(new Node<>(i) );
         }
@@ -53,7 +53,7 @@ public class NodeTest {
 
     @Test
     public void pruebaContarSiguientes() {
-        Node elNodo = new Node<>(0);
+        Node<Integer> elNodo = new Node<>(0);
         for (int i = 1; i < 40; i++) {
             elNodo.appendNext(new Node<>(i));
         }

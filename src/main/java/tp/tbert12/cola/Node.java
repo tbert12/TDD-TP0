@@ -1,9 +1,9 @@
 package tp.tbert12.cola;
 
 
-class Node<T> implements InterfaceNode {
+class Node<T> implements InterfaceNode<T> {
     private final T content;
-    private InterfaceNode nextNode = new NullNode();
+    private InterfaceNode<T> nextNode = new NullNode<>();
 
     Node(T theContent) {
         content = theContent;
@@ -25,12 +25,12 @@ class Node<T> implements InterfaceNode {
     }
 
     @Override
-    public InterfaceNode appendNext(Node node) {
+    public InterfaceNode<T> appendNext(InterfaceNode<T> node) {
         nextNode = nextNode.appendNext(node);
         return this;
     }
 
-    public InterfaceNode getNextNode() {
+    public InterfaceNode<T> getNextNode() {
         return nextNode;
     }
 }
